@@ -756,7 +756,7 @@ img {
 /* 2. Showcase Wrapper & Navigation */
 .portfolio-showcase-wrapper {
   position: relative;
-  max-width: 1080px;
+  max-width: 1160px;
   margin: 0 auto;
 }
 
@@ -872,10 +872,10 @@ img {
 
 /* Main Showcase Content */
 .showcase-content {
-  padding: 44px;
+  padding: 38px 36px;
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 40px;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 36px;
   align-items: center;
 }
 
@@ -903,7 +903,7 @@ img {
 .tag-emerald { background: rgba(5, 150, 105, 0.15); color: #34D399; }
 
 .showcase-info h3 {
-  font-size: 1.9rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: #FFFFFF;
   line-height: 1.25;
@@ -911,7 +911,7 @@ img {
 
 .showcase-info p {
   color: #94A3B8;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   line-height: 1.6;
 }
 
@@ -919,7 +919,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 6px 0;
+  margin: 4px 0;
 }
 
 .spec-badge {
@@ -943,8 +943,8 @@ img {
 .showcase-action-row {
   display: flex;
   align-items: center;
-  gap: 20px;
-  margin-top: 10px;
+  gap: 18px;
+  margin-top: 8px;
   flex-wrap: wrap;
 }
 
@@ -962,20 +962,55 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.showcase-preview img {
   width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
-  transition: transform 0.4s ease;
 }
 
-.showcase-slide:hover .showcase-preview img {
+.template-mockup-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  background: #0B1120;
+}
+
+.template-mockup-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.showcase-slide:hover .template-mockup-frame {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 65px -10px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(14, 165, 233, 0.35);
+}
+
+.showcase-slide:hover .template-mockup-img {
   transform: scale(1.02);
+}
+
+.template-preview-pill {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(11, 19, 43, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #7DD3FC;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
 }
 
 /* 4. Bottom Dots Navigation */
@@ -1007,38 +1042,6 @@ img {
   border-radius: var(--radius-full);
   background: var(--primary-light);
   box-shadow: 0 0 12px var(--primary-glow);
-}
-}
-
-.slider-timer-bar {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(90deg, var(--primary-lighter), var(--orange));
-  border-radius: var(--radius-full);
-  transition: width 0.1s linear;
-}
-
-@media (max-width: 900px) {
-  .mini-hero-body {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 20px;
-  }
-  .mini-hero-text {
-    align-items: center;
-  }
-  .mini-nav-links {
-    display: none;
-  }
-  .mini-cta-row {
-    justify-content: center;
-  }
-  .prev-btn { left: 4px; }
-  .next-btn { right: 4px; }
-  .slider-controls-bar {
-    flex-direction: column;
-    gap: 16px;
-  }
 }
 
 /* =========================================================
@@ -1529,9 +1532,6 @@ img {
   .showcase-info h3 {
     font-size: 1.6rem;
   }
-  .showcase-preview img {
-    height: 240px;
-  }
   .showcase-nav-btn.prev { left: 8px; }
   .showcase-nav-btn.next { right: 8px; }
 }
@@ -1635,9 +1635,6 @@ img {
   .showcase-info p {
     font-size: 0.85rem;
   }
-  .showcase-preview img {
-    height: 200px;
-  }
   .showcase-nav-btn {
     width: 38px;
     height: 38px;
@@ -1691,9 +1688,6 @@ img {
   }
   .showcase-info h3 {
     font-size: 1.2rem;
-  }
-  .showcase-preview img {
-    height: 170px;
   }
   .order-box {
     padding: 20px 14px;
